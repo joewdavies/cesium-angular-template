@@ -1,0 +1,62 @@
+@import 'variables.scss';
+.tab {
+    position: absolute;
+    opacity: 0.8;
+    height: 50px;
+    width: 30px;
+    z-index: -10;
+    transition: all $default-transition-time;
+    &.leftPosition {
+        left: -30px;
+        transform: translateX(7px);
+        button {
+            border-radius: 4px 0 0 4px;
+        }
+        &.activeTab {
+            button {
+                border-left: 3px solid map-get($colors, secondary);
+                border-bottom: none;
+                border-top: none;
+            }
+        }
+    }
+    &.rightPosition {
+        right: -30px;
+        transform: translateX(-7px);
+        button {
+            border-radius: 0 4px 4px 0;
+        }
+        &.activeTab {
+            button {
+                border-right: 3px solid map-get($colors, secondary);
+                border-bottom: none;
+                border-top: none;
+            }
+        }
+    }
+    &:hover {
+        transform: none;
+    }
+    &.activeTab {
+        opacity: 1;
+        transform: none;
+    }
+    button {
+        padding: 0;
+        line-height: 0;
+        min-width: 32px;
+        width: 100%;
+        height: 100%;
+        background-color: map-get($colors, light);
+        color: map-get($colors, primary);
+    }
+}
+
+.panelContainer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow-y: auto;
+}

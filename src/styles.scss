@@ -1,0 +1,318 @@
+/* You can add global styles to this file, and also import other style files */
+
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'cesiumTheme.scss';
+@import 'variables.scss';
+/* @import 'material-icons/iconfont/material-icons.scss'; */
+
+html,
+body,
+div[appCesium] {
+    width: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+// Necesario para que funcionen en mat-card y otros componentes
+[hidden] {
+    display: none !important;
+}
+
+// Border-box para todos
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+app-header {
+    +div.app-content {
+        position: relative;
+        height: calc(100% - #{$header-height});
+    }
+}
+
+mat-toolbar.mat-toolbar-single-row {
+    height: $header-height;
+}
+
+mat-card.card-popover {
+    width: 300px;
+    padding: 0;
+}
+
+// Sin pading para poder poner los colores a la cabecera
+.myapp-no-padding-dialog {
+    .mat-dialog-container {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .mat-dialog-title {
+        margin: 0;
+        padding: 10px 24px;
+    }
+
+    .mat-dialog-content {
+        margin: 0;
+    }
+}
+
+#logo {
+    height: 95px;
+    padding-right: 20px;
+}
+
+.mat-tab-group.mat-secondary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: white;
+}
+
+#cotSidePanelContainer {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    z-index: 4 !important;
+    overflow-x: hidden;
+    transition: 0.3s;
+    align-items: center;
+    color: white;
+}
+
+// Poner opacidad máxima en el tab seleccionado de material
+.mat-tab-label.mat-tab-label-active {
+    opacity: 1;
+}
+
+/* app-sidepanel {
+    height: 100%;
+    width: 0%;
+    float: left;
+    z-index: 87 !important;
+    overflow-x: hidden;
+    transition: 0.3s;
+    color: map-get($colors, tertiary);
+    background-color: map-get($colors, primary);
+    opacity: 0.8;
+    left: 0px;
+}
+ */
+
+/* .mat-tab-label {
+    color: map-get($colors, tertiary);
+    opacity: 1;
+}
+
+.mat-tab-header-pagination {
+    background: map-get($colors, tertiary);
+} */
+
+/* btn abrir / cerrar sidenav */
+
+#sideNavToggle {
+    cursor: pointer;
+    z-index: 99999;
+    float: right;
+    width: 30px;
+}
+
+/* zoom in / out buttons */
+
+.navigation-control,
+.navigation-control-last {
+    background-color: map-get($colors, secondary);
+}
+
+.cesium-widget-credits {
+    display: none !important;
+}
+
+#toolbarContainer {
+    pointer-events: none;
+    width: 100%;
+    text-align: center;
+}
+
+#toolbar {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    z-index: 3;
+    bottom: 60px;
+    /* left: 22%; */
+    align-self: center;
+    width: 21%;
+    height: 50px;
+    background-color: #00000091;
+    border-radius: 20px;
+}
+
+#loading-overlay {
+    display: none;
+    position: absolute;
+    top: 47%;
+    left: 47%;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid map-get($colors, primary);
+    width: 45px;
+    height: 45px;
+    -webkit-animation: spin 1.4s linear infinite;
+    /* Safari */
+    animation: spin 1.4s linear infinite;
+}
+
+/* Safari */
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+// botones cesium
+.cesium-toolbar-button {
+    background-color: map-get($colors, secondary);
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+}
+
+.cesium-toolbar-button:hover {
+    background-color: black;
+}
+
+//widget mapas base
+.cesium-baseLayerPicker-dropDown {
+    background-color: black;
+    opacity: 0.8;
+}
+
+//boton search (tiene estilos unicos)
+.cesium-geocoder-searchButton {
+    height: 40px;
+    width: 40px;
+    background: map-get($colors, secondary);
+    border-radius: 20px; //icono search
+
+    svg {
+        height: 35px;
+    }
+}
+
+.cesium-geocoder-searchButton:hover {
+    background-color: #070a08;
+}
+
+//search container
+.cesium-viewer-geocoderContainer .cesium-geocoder-input {
+    height: 42px;
+    width: 40px;
+    border: none;
+    padding-right: 38px;
+    border-radius: 21px 21px 21px 21px;
+}
+
+.cesium-viewer-geocoderContainer .cesium-geocoder-input:focus {
+    padding-left: 9px;
+}
+
+//brujula interior
+.compass-gyro-background {
+    background-color: map-get($colors, secondary) !important;
+}
+
+//brujula exterior
+.compass-outer-ring-background {
+    border-color: map-get($colors, secondary) !important;
+}
+
+button.toolbarBtn {
+    background-color: map-get($colors, secondary) !important;
+    color: map-get($colors, tertiary) !important;
+    margin: 5px;
+}
+
+button.toolbarBtn:hover {
+    background-color: map-get($colors, secondary) !important;
+}
+
+// Clase para poner el cursor clicable
+.clicable {
+    cursor: pointer;
+}
+
+// clase para los titulos de los extension panels de material
+.cot-panel-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.fill-remaining-space {
+    /* This fills the remaining space, by using flexbox.
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+@media print {
+
+    // Necesario para que se oculten las herramientas en la impresión
+    #navigationDiv,
+    .cesium-viewer-toolbar,
+    .cesium-viewer-bottom {
+        display: none;
+    }
+
+    .distance-legend {
+        display: block !important;
+        pointer-events: auto;
+        position: absolute;
+        border-radius: 15px;
+        background-color: rgba(47, 53, 60, 0.8) !important;
+        padding-left: 5px;
+        padding-right: 5px;
+        right: 9px;
+        bottom: 9px;
+        height: 30px;
+        width: 125px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-sizing: content-box;
+    }
+}
+
+
+.cesium-baseLayerPicker-dropDown {
+    max-width: 228px;
+}
+
+.component-heading {
+    text-align: center;
+}

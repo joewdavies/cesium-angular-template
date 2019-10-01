@@ -1,0 +1,32 @@
+@import 'variables.scss';
+
+.sidepanel-container {
+    height: 100%;
+}
+
+//barra busqueda 
+app-search {
+    display: none; //display:block
+    position: absolute;
+    top: 7px;
+    right: 150px;
+}
+
+// Necesario para configurar el sidemultipanel
+.mat-sidenav {
+    width: $panel-width;
+    max-width: calc(100% - 30px);
+    visibility: visible !important;
+    overflow-y: visible;
+}
+
+//tooltip al hover sobre edificios
+#cesiumTooltip {
+    padding: 10px;
+    background-color: black;
+    opacity: 0.7;
+    color: white;
+    position: absolute;
+    top: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -1,0 +1,10 @@
+<div class="multipanel-container">
+  <div class="tab" (click)="sidePanel.toggle()" [ngClass]="{'rightPosition': position =='start', 'leftPosition':position=='end'}"
+    matTooltip="Abrir panel" [matTooltipPosition]="position =='end' ? 'left' : 'right'">
+    <button mat-raised-button color="primary">
+      <mat-icon>apps</mat-icon>
+    </button>
+  </div>
+
+  <ng-content></ng-content>
+</div>

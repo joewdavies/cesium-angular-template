@@ -1,0 +1,89 @@
+<!-- <mat-sidenav-container style="height:100%">
+  <mat-sidenav mode="side" [(opened)]="sideNavOpen">
+    <div><img id="logo" src="../assets/images/logo.png"></div>
+    <app-sidepanel></app-sidepanel>
+  </mat-sidenav>
+
+  <mat-sidenav-content> -->
+
+<app-header [sidePanel]="sidepanel"></app-header>
+<!-- <div id="cotSidePanelContainer">
+  <app-sidepanel id="cotSidePanel"></app-sidepanel>
+  <button mat-icon id="sideNavToggle" (click)="toggleSideNav()">
+    <mat-icon *ngIf="!sideNavOpen"><span class="material-icons">arrow_forward_ios</span></mat-icon>
+    <mat-icon *ngIf="sideNavOpen"><span class="material-icons">arrow_back_ios</span></mat-icon>
+  </button>
+</div> -->
+<div class="app-content">
+    <app-splash-screen></app-splash-screen>
+
+    <mat-sidenav-container class="sidepanel-container" [hasBackdrop]="false">
+        <mat-sidenav class="mat-sidenav" #sidepanel mode="over" [opened]="false" position="start">
+            <app-side-multipanel [sidePanel]="sidepanel" position="start">
+                <app-tab-panel iconName="layers" tooltip="Gestión de capas">
+                    <!-- <app-toc-layers></app-toc-layers> -->
+                    <app-template-component></app-template-component>
+                </app-tab-panel>
+                <!-- <app-tab-panel [badgeIcon]="bookmarkTool" iconName="bookmarks" tooltip="Puntos de interés">
+                    <app-bookmarks (changeEditTool)="changeBookmarkTool($event)"></app-bookmarks>
+                </app-tab-panel>
+                <app-tab-panel iconName="3d_rotation" tooltip="Modelos Municipales">
+                    <app-tilesets></app-tilesets>
+                </app-tab-panel>
+                <app-tab-panel iconName="flight" tooltip="Vuelos Guiados">
+                    <app-flights></app-flights>
+                </app-tab-panel>
+                <app-tab-panel [badgeIcon]="editTool" iconName="build" tooltip="Herramientas">
+                    <app-tools (changeEditTool)="changeEditTool($event)"></app-tools>
+                </app-tab-panel>
+                <app-tab-panel iconName="help" tooltip="Ayuda">
+                    <app-help></app-help>
+                </app-tab-panel> -->
+            </app-side-multipanel>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div appCesium></div>
+            <!-- <app-search></app-search> -->
+            <!-- <div id="loading-overlay"></div> -->
+            <div id="cesiumTooltip"></div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    <!-- <app-identify [alwaysActive]="true"></app-identify> -->
+    <!--  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="large" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white"></p>
+  </ngx-spinner> -->
+    <ngx-spinner bdColor="rgba(51,51,51,0.7)" size="large" color="#fff" type="ball-scale-ripple-multiple">
+    </ngx-spinner>
+    <!-- <div appCesium></div> -->
+    <!-- <div id="loading-overlay"></div>
+
+   dock de herramientas -->
+    <!-- <div id="toolbar">
+    <button mat-mini-fab class="toolbarBtn">
+      <mat-icon aria-label="Example">toc</mat-icon>
+    </button>
+    <button mat-mini-fab class="toolbarBtn">
+      <mat-icon aria-label="Example">layers</mat-icon>
+    </button>
+    <button mat-mini-fab class="toolbarBtn">
+      <mat-icon aria-label="Example">bookmarks</mat-icon>
+    </button>
+    <button mat-mini-fab class="toolbarBtn">
+      <mat-icon aria-label="Example">terrain</mat-icon>
+    </button>
+    <button mat-mini-fab class="toolbarBtn">
+      <mat-icon aria-label="Example" svgIcon="ruler"></mat-icon>
+    </button>
+    <button mat-mini-fab class="toolbarBtn">
+      <mat-icon aria-label="Example">info</mat-icon>
+    </button>
+    <button mat-mini-fab class="toolbarBtn">
+      <mat-icon aria-label="Example">help</mat-icon>
+    </button>
+
+  </div> -->
+</div>
+
+<!-- </mat-sidenav-content>
+</mat-sidenav-container> -->

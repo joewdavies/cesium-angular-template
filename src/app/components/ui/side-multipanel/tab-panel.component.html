@@ -1,0 +1,25 @@
+<div
+    #tab
+    class="tab"
+    (click)="selectTab()"
+    [ngClass]="{ activeTab: active, rightPosition: position == 'start', leftPosition: position == 'end' }"
+    [matTooltip]="tooltip"
+    [matTooltipPosition]="position == 'end' ? 'left' : 'right'"
+    matBadge
+    [matBadgeIcon]="badgeIcon"
+    matBadgeSize="medium"
+    matBadgePosition="above after"
+    matBadgeColor="primary"
+    [matBadgeHidden]="!badgeIcon"
+>
+    <!-- [matBadgeHidden]="!activate" -->
+
+    <button mat-stroked-button>
+        <mat-icon *ngIf="!customIcon">{{ iconName }}</mat-icon>
+        <mat-icon *ngIf="customIcon" [svgIcon]="customIcon"></mat-icon>
+    </button>
+</div>
+
+<div class="panelContainer" [hidden]="!active">
+    <ng-content></ng-content>
+</div>
