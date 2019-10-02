@@ -30,8 +30,7 @@
                         "styles": [
                             "node_modules/cesium/Build/Cesium/Widgets/widgets.css",
                             "node_modules/ngx-toastr/toastr.css",
-                            "src/styles.scss",
-                            "node_modules/angular2-draggable/css/resizable.min.css"
+                            "src/styles.scss"
                         ],
                         "scripts": [
                             "node_modules/cesium/Build/Cesium/Cesium.js",
